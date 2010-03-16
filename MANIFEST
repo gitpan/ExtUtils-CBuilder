@@ -21,4 +21,3 @@ t/00-have-compiler.t
 t/01-basic.t
 t/02-link.t
 t/03-cplusplus.t
-SIGNATURE    Added here by Module::Build
