@@ -12,7 +12,7 @@ use IPC::Cmd qw(can_run);
 use File::Temp qw(tempfile);
 
 use vars qw($VERSION);
-$VERSION = '0.27_04';
+$VERSION = '0.27_05';
 
 # More details about C/C++ compilers:
 # http://developers.sun.com/sunstudio/documentation/product/compiler.jsp
@@ -22,7 +22,7 @@ $VERSION = '0.27_04';
 
 my %cc2cxx = (
     # first line order is important to support wrappers like in pkgsrc
-    cc => [ 'c++', 'CC', 'aCC', ], # Sun Studio, HP ANSI C/C++ Compilers
+    cc => [ 'c++', 'CC', 'aCC', 'cxx', ], # Sun Studio, HP ANSI C/C++ Compilers
     gcc => [ 'g++' ], # GNU Compiler Collection
     xlc => [ 'xlC' ], # IBM C/C++ Set, xlc without thread-safety
     xlc_r => [ 'xlC_r' ], # IBM C/C++ Set, xlc with thread-safety
@@ -39,12 +39,12 @@ sub new {
   while (my ($k,$v) = each %Config) {
     $self->{config}{$k} = $v unless exists $self->{config}{$k};
   }
-  $self->{config}{cc} = $ENV{CC} if exists $ENV{CC};
-  $self->{config}{ccflags} = $ENV{CFLAGS} if exists $ENV{CFLAGS};
-  $self->{config}{cxx} = $ENV{CXX} if exists $ENV{CXX};
-  $self->{config}{cxxflags} = $ENV{CXXFLAGS} if exists $ENV{CXXFLAGS};
-  $self->{config}{ld} = $ENV{LD} if exists $ENV{LD};
-  $self->{config}{ldflags} = $ENV{LDFLAGS} if exists $ENV{LDFLAGS};
+  $self->{config}{cc} = $ENV{CC} if defined $ENV{CC};
+  $self->{config}{ccflags} = $ENV{CFLAGS} if defined $ENV{CFLAGS};
+  $self->{config}{cxx} = $ENV{CXX} if defined $ENV{CXX};
+  $self->{config}{cxxflags} = $ENV{CXXFLAGS} if defined $ENV{CXXFLAGS};
+  $self->{config}{ld} = $ENV{LD} if defined $ENV{LD};
+  $self->{config}{ldflags} = $ENV{LDFLAGS} if defined $ENV{LDFLAGS};
 
   unless ( exists $self->{config}{cxx} ) {
     my ($ccpath, $ccbase, $ccsfx ) = fileparse($self->{config}{cc}, qr/\.[^.]*/);
@@ -77,7 +77,7 @@ sub find_perl_interpreter {
   my $perl;
   File::Spec->file_name_is_absolute($perl = $^X)
     or -f ($perl = $Config::Config{perlpath})
-    or ($perl = $^X);
+    or ($perl = $^X); # XXX how about using IPC::Cmd::can_run here?
   return $perl;
 }
 
