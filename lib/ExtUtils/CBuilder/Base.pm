@@ -12,7 +12,7 @@ use IPC::Cmd qw(can_run);
 use File::Temp qw(tempfile);
 
 use vars qw($VERSION);
-$VERSION = '0.27_05';
+$VERSION = '0.27_06';
 
 # More details about C/C++ compilers:
 # http://developers.sun.com/sunstudio/documentation/product/compiler.jsp
@@ -326,6 +326,11 @@ sub split_like_shell {
   return @$string if UNIVERSAL::isa($string, 'ARRAY');
   $string =~ s/^\s+|\s+$//g;
   return () unless length($string);
+  
+  # Text::ParseWords replaces all 'escaped' characters with themselves, which completely
+  # breaks paths under windows. As such, we forcibly replace backwards slashes with forward
+  # slashes on windows.
+  $string =~ s@\\@/@g if $^O eq 'MSWin32';
   
   return Text::ParseWords::shellwords($string);
 }
