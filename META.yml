@@ -26,9 +26,13 @@ resources:
   bugtracker: http://rt.perl.org/rt3/
   homepage: http://search.cpan.org/dist/ExtUtils-CBuilder
   repository: git://github.com/dagolden/extutils-cbuilder.git
-version: 0.280201
+version: 0.280202
 x_Dist_Zilla:
   plugins:
+    -
+      class: Dist::Zilla::Plugin::VersionFromModule
+      name: VersionFromModule
+      version: 0.08
     -
       class: Dist::Zilla::Plugin::CheckExtraTests
       name: CheckExtraTests

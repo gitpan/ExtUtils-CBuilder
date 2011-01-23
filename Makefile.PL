@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     'IPC::Cmd' => '0',
     'Text::ParseWords' => '0'
   },
-  'VERSION' => '0.280201',
+  'VERSION' => '0.280202',
   'test' => {
     'TESTS' => 't/*.t'
   }
