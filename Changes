@@ -1,5 +1,29 @@
 Revision history for Perl extension ExtUtils::CBuilder.
 
+0.280205 - 2011-12-20 (Perl v5.15.6)
+
+  Fixed:
+
+  - Fixed bug picking up ccflags from Config
+
+0.280204 - 2011-06-20 (Perl v5.15.0)
+
+  Minor:
+
+  - Quotation style cleanup
+
+0.280203 - 2011-05-14 (Perl v5.14.0)
+
+  Fixed:
+
+  - Appends CFLAGS and LDFLAGS environments instead of overriding
+
+  - Reset ccflags on compilation for VMS.
+
+  Changed:
+
+  - Refactored OS name mapping to use Perl::OSType
+
 0.280202 - Sun Jan 23 10:47:51 EST 2011
 
   - Different file names used for test files; allows EU::CB tests
