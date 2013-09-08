@@ -1,3 +1,4 @@
+CONTRIBUTING
 Changes
 LICENSE
 MANIFEST
@@ -5,7 +6,7 @@ META.json
 META.yml
 Makefile.PL
 README
-README.patching
+README.mkdn
 dist.ini
 lib/ExtUtils/CBuilder.pm
 lib/ExtUtils/CBuilder/Base.pm

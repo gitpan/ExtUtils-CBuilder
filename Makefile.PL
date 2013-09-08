@@ -26,12 +26,13 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "IO::File" => 0,
     "IPC::Cmd" => 0,
+    "Perl::OSType" => 1,
     "Text::ParseWords" => 0
   },
   "TEST_REQUIRES" => {
     "Test::More" => "0.47"
   },
-  "VERSION" => "0.280210",
+  "VERSION" => "0.280211",
   "test" => {
     "TESTS" => "t/*.t"
   }
