@@ -56,7 +56,7 @@
          "web" : "http://github.com/Perl-Toolchain-Gang/ExtUtils-CBuilder"
       }
    },
-   "version" : "0.280211",
+   "version" : "0.280212",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018000"
