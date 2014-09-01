@@ -1,5 +1,5 @@
 package ExtUtils::CBuilder::Platform::cygwin;
-$ExtUtils::CBuilder::Platform::cygwin::VERSION = '0.280218';
+$ExtUtils::CBuilder::Platform::cygwin::VERSION = '0.280219';
 use strict;
 use File::Spec;
 use ExtUtils::CBuilder::Platform::Unix;

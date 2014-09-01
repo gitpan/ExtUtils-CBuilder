@@ -1,5 +1,5 @@
 package ExtUtils::CBuilder::Platform::Windows;
-$ExtUtils::CBuilder::Platform::Windows::VERSION = '0.280218';
+$ExtUtils::CBuilder::Platform::Windows::VERSION = '0.280219';
 use strict;
 use warnings;
 

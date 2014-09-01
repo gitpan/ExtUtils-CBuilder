@@ -1,5 +1,5 @@
 package ExtUtils::CBuilder::Platform::os2;
-$ExtUtils::CBuilder::Platform::os2::VERSION = '0.280218';
+$ExtUtils::CBuilder::Platform::os2::VERSION = '0.280219';
 use strict;
 use ExtUtils::CBuilder::Platform::Unix;
 

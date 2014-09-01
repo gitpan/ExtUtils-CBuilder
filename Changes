@@ -1,5 +1,11 @@
 Revision history for Perl extension ExtUtils::CBuilder.
 
+0.280219 - 2014-09-01
+
+  Fixed:
+
+  - Fixed regression on Android (thanks to Brian Fraser)
+
 0.280218 - 2014-09-01
 
   Fixed:

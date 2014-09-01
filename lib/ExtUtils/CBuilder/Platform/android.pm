@@ -1,5 +1,5 @@
 package ExtUtils::CBuilder::Platform::android;
-$ExtUtils::CBuilder::Platform::android::VERSION = '0.280218';
+$ExtUtils::CBuilder::Platform::android::VERSION = '0.280219';
 use strict;
 use File::Spec;
 use ExtUtils::CBuilder::Platform::Unix;
@@ -17,6 +17,7 @@ sub link {
       $self->split_like_shell($args{extra_linker_flags}),
       '-L' . $self->perl_inc(),
       '-lperl',
+      $self->split_like_shell($Config{perllibs}),
     ];
   }
 
