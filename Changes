@@ -1,5 +1,12 @@
 Revision history for Perl extension ExtUtils::CBuilder.
 
+0.280218 - 2014-09-01
+
+  Fixed:
+
+  - Mispelled 'starup' key in BCC support was fixed. #79574
+  - Fixed the version in the PM file (thanks to Jim Keenan)
+
 0.280217 - 2014-08-22
 
   Fixed:

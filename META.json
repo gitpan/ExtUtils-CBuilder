@@ -57,17 +57,12 @@
          "web" : "http://github.com/Perl-Toolchain-Gang/ExtUtils-CBuilder"
       }
    },
-   "version" : "0.280217",
+   "version" : "0.280218",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.020000"
       },
       "plugins" : [
-         {
-            "class" : "Dist::Zilla::Plugin::VersionFromModule",
-            "name" : "VersionFromModule",
-            "version" : "0.08"
-         },
          {
             "class" : "Dist::Zilla::Plugin::CheckExtraTests",
             "name" : "CheckExtraTests",
@@ -190,6 +185,11 @@
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "PodSyntaxTests",
+            "version" : "5.020"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PkgVersion",
+            "name" : "PkgVersion",
             "version" : "5.020"
          },
          {
